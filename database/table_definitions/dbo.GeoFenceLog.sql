@@ -1,0 +1,19 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[GeoFenceLog](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[GeoFenceId] [int] NOT NULL,
+	[BusDataId] [int] NOT NULL,
+	[RouteId] [int] NOT NULL,
+	[VehicleId] [int] NOT NULL,
+	[Status] [nvarchar](10) NOT NULL,
+	[TimestampUTC] [datetime2](7) NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[GeoFenceLog] ADD PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
